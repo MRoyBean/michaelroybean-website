@@ -1349,11 +1349,11 @@ h3 {
 
 .roadmap-inspector {
   display: grid;
-  grid-template-columns: 12rem minmax(0, 0.7fr) minmax(0, 1fr);
-  gap: 1rem;
+  grid-template-columns: 10rem minmax(14rem, 0.52fr) minmax(0, 1.25fr);
+  gap: 1.2rem;
   align-items: start;
   margin-top: 1rem;
-  padding: 1.15rem;
+  padding: clamp(1.15rem, 2vw, 1.55rem);
   border: 1px solid rgba(255, 255, 255, 0.14);
   background:
     linear-gradient(90deg, rgba(210, 154, 67, 0.12), rgba(94, 208, 200, 0.08)),
@@ -1374,7 +1374,9 @@ h3 {
 }
 
 .roadmap-inspector p {
+  max-width: 58rem;
   margin-bottom: 0;
+  line-height: 1.7;
 }
 
 .site-footer {

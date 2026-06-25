@@ -102,11 +102,45 @@ const inspectorMeta = document.querySelector("#inspector-meta");
 const inspectorTitle = document.querySelector("#inspector-title");
 const inspectorCopy = document.querySelector("#inspector-copy");
 
+const roadmapDetails = {
+  "education-2026":
+    "This year is about increasing technical leverage. The focus is starting the M.S. Computer Science path with AI and ML emphasis, then connecting that learning directly to practical supply chain problems: data quality, knowledge graph modeling, solution architecture, and the ability to translate messy operational needs into technical design choices.",
+  "education-2027":
+    "This stage converts learning into repeatable delivery discipline. Completing the M.S. strengthens the technical foundation, while beginning MBA work adds product, finance, leadership, and organizational-change range. The goal is to become stronger at moving ideas through controls, monitoring, adoption, and measurable value.",
+  "education-2028":
+    "The focus shifts toward product fluency: understanding roadmap tradeoffs, financial impact, stakeholder value, change leadership, and durable adoption. This builds the ability to lead AI, data, and transformation work as a product capability instead of a series of disconnected projects.",
+  "education-2029":
+    "This year is about sharpening executive communication and strategy. Completing the MBA target adds business range, but the real outcome is stronger ability to explain complex technical and operational choices in leadership-ready terms, build sponsorship, and connect teams around shared direction.",
+  "education-2030":
+    "The learning focus broadens into people leadership. Responsible technology governance, coaching, talent development, and workforce planning become central, so technical transformation can scale through people, not just through tools, dashboards, and individual problem solving.",
+  "impact-2026":
+    "The organizational value starts with clarity. This means defining system and process hazards, identifying data gaps, improving traceability, and maturing AI portfolios so teams know which problems are worth solving and what controls must be in place before technology is deployed.",
+  "impact-2027":
+    "The impact focus is reducing failure paths in real workflows. Solutions should improve knowledge access, monitoring, controls, and adoption so teams can detect issues earlier, understand what is changing, and trust the new process or tool enough to use it consistently.",
+  "impact-2028":
+    "This is where the model becomes repeatable. The aim is to strengthen knowledge graph and data foundations, create a reusable problem-solving pattern, and track value, integrity, and user readiness so successful approaches can scale beyond one local use case.",
+  "impact-2029":
+    "The organizational goal is connection across teams. By aligning common needs, shared roadmaps, and reusable capabilities, the work should reduce duplicated effort, manual work, fragmented priorities, and the slow drift that happens when every group solves the same problem separately.",
+  "impact-2030":
+    "The long-term impact is sustained operating capability. That means teams have clearer knowledge, stronger ownership, better data-informed decisions, and safer workflows that continue to improve after the initial transformation effort is complete.",
+  "career-2026":
+    "The career focus is operating as a forward-deployed transformation lead: staying close to the teams experiencing the problem, translating operational reality into requirements and controls, and helping move solutions from discovery through design, build, deployment, and adoption.",
+  "career-2027":
+    "This stage builds scale. The work expands from individual analysis into delivery leadership: requirements, product direction, developer coordination, technical partner alignment, user readiness, and the habits needed to move multiple solutions through an enterprise environment.",
+  "career-2028":
+    "The target role is Supply Chain Artificial Intelligence Product Manager. The emphasis is owning vision, priorities, roadmap, adoption, and value tracking for AI-enabled capabilities that solve real supply chain problems instead of chasing novelty.",
+  "career-2029":
+    "This year deepens product leadership range. The work is about building sponsorship, connecting BCA teams around common needs, earning stakeholder trust, and turning product management from a role into an enterprise influence mechanism.",
+  "career-2030":
+    "The career path moves into first-line leadership. The focus is gaining direct-report experience, coaching people, building capability, and leading products and outcomes through a team that can solve problems end to end."
+};
+
 function selectMapCard(card) {
   const title = card.querySelector("h3")?.textContent?.trim() || "";
-  const copy = card.querySelector("p")?.textContent?.trim() || "";
   const lane = card.dataset.lane || "Roadmap";
   const year = card.dataset.year || "";
+  const detailKey = `${lane}-${year}`;
+  const copy = roadmapDetails[detailKey] || card.querySelector("p")?.textContent?.trim() || "";
 
   mapCards.forEach((item) => item.classList.toggle("is-selected", item === card));
   inspectorMeta.textContent = `${year} | ${lane}`;
