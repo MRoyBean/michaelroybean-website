@@ -133,6 +133,19 @@ p {
   outline: none;
 }
 
+.site-nav .nav-linkedin {
+  margin-left: 0.25rem;
+  border: 1px solid rgba(243, 193, 101, 0.42);
+  background: rgba(243, 193, 101, 0.12);
+  color: #f3c165;
+}
+
+.site-nav .nav-linkedin:hover,
+.site-nav .nav-linkedin:focus-visible {
+  background: var(--gold);
+  color: #17120b;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
